@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./styles.module.css";
 
-type Props = {};
+type Props = {
+    word: string;
+    guessedLetters: string[];
+};
 
-const index = (props: Props) => {
-    const word = "test";
-    const guesssedLetters = ["e", "t"];
-
+const index = ({ guessedLetters, word }: Props) => {
     return (
         <div className={style.container}>
             {word.split("").map((letter, index) => (
                 <span className={style.letter} key={index}>
                     <span
                         style={{
-                            visibility: guesssedLetters.includes(letter)
+                            visibility: guessedLetters.includes(letter)
                                 ? "visible"
                                 : "hidden",
                         }}
