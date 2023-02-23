@@ -1,0 +1,13 @@
+.container {
+    max-width: 40em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.responseText {
+    font-size: 1.5em;
+}

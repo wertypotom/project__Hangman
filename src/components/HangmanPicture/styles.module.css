@@ -1,0 +1,91 @@
+.container {
+    position: relative;
+}
+
+.hangLine {
+    position: absolute;
+    width: 0.3em;
+    height: 2em;
+    background-color: black;
+    top: 0;
+    right: 0;
+}
+
+.upperLine {
+    margin-left: 4.5em;
+    height: 0.3em;
+    width: 7em;
+    background-color: black;
+}
+
+.middleLine {
+    margin-left: 4.5em;
+    height: 14em;
+    width: 0.3em;
+    background-color: black;
+}
+
+.bottomLine {
+    height: 0.3em;
+    width: 9em;
+    background-color: black;
+}
+
+.head {
+    position: absolute;
+    border: 0.25em solid black;
+    border-radius: 50%;
+    width: 1.8em;
+    height: 1.8em;
+    right: -1em;
+    top: 1.9em;
+}
+
+.body {
+    position: absolute;
+    background-color: black;
+    width: 0.3em;
+    height: 4em;
+    right: 0;
+    top: 4em;
+}
+
+.leftArm {
+    position: absolute;
+    background-color: black;
+    width: 0.3em;
+    height: 3em;
+    transform: rotate(-50deg);
+    right: 1.1em;
+    top: 3.3em;
+}
+
+.rightArm {
+    position: absolute;
+    background-color: black;
+    width: 0.3em;
+    height: 3em;
+    transform: rotate(50deg);
+    right: -1.1em;
+    top: 3.3em;
+}
+
+.leftLeg {
+    position: absolute;
+    background-color: black;
+    width: 0.3em;
+    height: 3em;
+    transform: rotate(40deg);
+    right: 1em;
+    top: 7.5em;
+}
+
+.rightLeg {
+    position: absolute;
+    background-color: black;
+    width: 0.3em;
+    height: 3em;
+    transform: rotate(-40deg);
+    right: -1em;
+    top: 7.5em;
+}
