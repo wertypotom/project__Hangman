@@ -11,3 +11,8 @@
 .responseText {
     font-size: 1.5em;
 }
+
+.wordToGuess {
+    border-bottom: 0.05em solid black;
+    color: red;
+}

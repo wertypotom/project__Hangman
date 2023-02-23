@@ -1,42 +1,47 @@
 import React from "react";
+import { KEYS } from "../../conts";
 import style from "./styles.module.css";
 
-type Props = {};
+type Props = {
+    selectLetter: (letter: string) => void;
+    guessedLetters: string[];
+    wordToGuess: string;
+    wrongAttempt: number;
+    correctAttempt: number;
+};
 
-const KEYS = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-];
+const index = ({
+    selectLetter,
+    guessedLetters,
+    wordToGuess,
+    wrongAttempt,
+    correctAttempt,
+}: Props) => {
+    const getLetterStyle = (letter: string) => {
+        if (
+            (guessedLetters.includes(letter) &&
+                !wordToGuess.includes(letter)) ||
+            wrongAttempt === 6
+        )
+            return style.inactive;
+        if (guessedLetters.includes(letter) && wordToGuess.includes(letter))
+            return style.active;
+    };
 
-const index = (props: Props) => {
     return (
         <div className={style.container}>
             {KEYS.map((item) => (
-                <button className={style.letter} key={item}>
+                <button
+                    disabled={
+                        guessedLetters.includes(item) ||
+                        wrongAttempt === 6 ||
+                        correctAttempt ===
+                            Array.from(new Set(wordToGuess)).length
+                    }
+                    onClick={() => selectLetter(item)}
+                    className={`${style.letter} ${getLetterStyle(item)}`}
+                    key={item}
+                >
                     {item}
                 </button>
             ))}
